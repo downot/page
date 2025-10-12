@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DownOT's Home</title>
+    <style>
+        /* Global styles with font stack for international compatibility, adding a fun, anime-inspired font */
+        body {
+            font-family: 'Comic Sans MS', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            background: linear-gradient(135deg, #1e3c72, #2a5298); /* Cooler, boyish blue gradient background (inspired by night sky or hero themes) */
+            color: #fff; /* White text for better contrast on dark background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden; /* Prevent overflow for animations */
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent for a mysterious, anime effect */
+            border-radius: 20px; /* More rounded for cartoon feel */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow for a bolder look */
+            position: relative;
+            animation: fadeIn 1s ease-in-out; /* Entrance animation */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            border: 4px solid #00bfff; /* Deep sky blue border for a cool, boyish vibe */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease; /* Hover animation */
+        }
+
+        .avatar:hover {
+            transform: scale(1.1) rotate(5deg); /* Fun hover effect */
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 0 0 20px;
+            color: #00ff00; /* Vibrant green for title (like energy blasts in anime) */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Stronger shadow for heroic depth */
+            font-weight: bold;
+        }
+
+        .link-button {
+            display: block;
+            background: linear-gradient(45deg, #007bff, #0056b3); /* Blue gradient for a strong, masculine feel */
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px; /* Rounded buttons */
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background 0.3s ease; /* Smooth animations */
+        }
+
+        .link-button:hover {
+            background: linear-gradient(45deg, #0056b3, #003f7f); /* Darker blue on hover */
+            transform: translateY(-5px) scale(1.05); /* Lift and scale effect */
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .link-button {
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Avatar placeholder - replace src with your image URL -->
+        <img src="avatar.png" alt="Avatar" class="avatar">
+        
+        <!-- Title or Username -->
+        <h1>DownOT</h1>
+        <p>AI enthusiast, amateur illustrator.</p>
+        <!-- Link positions - replace href with your actual links -->
+        <a href="https://s.downot.moe/pixiv" class="link-button">My illustrations on Pixiv</a>
+        <a href="https://s.downot.moe/discord" class="link-button">Join My Discord Server</a>
+        <a href="https://odaibako.net/u/downot" class="link-button">Feedback | お題箱</a>
+    </div>
+</body>
+</html>
