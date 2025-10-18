@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DownOT's Home</title>
     <style>
-        /* Global styles with font stack for international compatibility, adding a fun, anime-inspired font */
         body {
-            font-family: 'Comic Sans MS', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 
+                         'Hiragino Kaku Gothic ProN', 'Meiryo', 
+                         'PingFang SC', 'Microsoft YaHei', 
+                         'PingFang TC', 'Microsoft JhengHei', 
+                         sans-serif;
             background: linear-gradient(135deg, #1e3c72, #2a5298); /* Cooler, boyish blue gradient background (inspired by night sky or hero themes) */
             color: #fff; /* White text for better contrast on dark background */
             margin: 0;
@@ -53,10 +56,17 @@
 
         h1 {
             font-size: 28px;
-            margin: 0 0 20px;
+            margin: 0 0 10px; /* Reduced bottom margin slightly */
             color: #00ff00; /* Vibrant green for title (like energy blasts in anime) */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Stronger shadow for heroic depth */
             font-weight: bold;
+        }
+        
+        /* Style for the description paragraph for better readability */
+        p {
+            margin: 0 0 20px;
+            line-height: 1.6; /* Increased line-height for better readability of CJK characters */
+            font-size: 16px;
         }
 
         .link-button {
@@ -71,6 +81,7 @@
             font-weight: bold;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, background 0.3s ease; /* Smooth animations */
+            word-break: break-all; /* Prevents long CJK text from overflowing the button */
         }
 
         .link-button:hover {
@@ -92,6 +103,10 @@
             h1 {
                 font-size: 24px;
             }
+            
+            p {
+                font-size: 14px;
+            }
 
             .link-button {
                 padding: 12px;
@@ -107,10 +122,17 @@
         
         <!-- Title or Username -->
         <h1>DownOT</h1>
-        <p>AI enthusiast, amateur illustrator.</p>
+        <!-- Description -->
+        <p>AI Art / AIイラスト / AI 繪圖</p>
+        <p>
+            Crafting youthful & kemomimi characters<br>
+            ショタ・ロリ・ケモミミ中心<br>
+            主攻少年、獸耳
+        </p>
         <!-- Link positions - replace href with your actual links -->
-        <a href="https://s.downot.moe/pixiv" class="link-button">My illustrations on Pixiv</a>
+        <a href="https://s.downot.moe/pixiv" class="link-button">My Pixiv</a>
         <a href="https://s.downot.moe/discord" class="link-button">Join My Discord Server</a>
+        <a href="https://a.downot.moe/" class="link-button">Collections (Only Member)</a>
         <a href="https://odaibako.net/u/downot" class="link-button">Feedback | お題箱</a>
     </div>
 </body>
