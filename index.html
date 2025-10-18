@@ -11,8 +11,8 @@
                          'PingFang SC', 'Microsoft YaHei', 
                          'PingFang TC', 'Microsoft JhengHei', 
                          sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298); /* Cooler, boyish blue gradient background (inspired by night sky or hero themes) */
-            color: #fff; /* White text for better contrast on dark background */
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
             margin: 0;
             padding: 0;
             display: flex;
@@ -20,18 +20,18 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            overflow: hidden; /* Prevent overflow for animations */
+            overflow: hidden;
         }
 
         .container {
             max-width: 400px;
             width: 100%;
             padding: 30px;
-            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent for a mysterious, anime effect */
-            border-radius: 20px; /* More rounded for cartoon feel */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow for a bolder look */
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             position: relative;
-            animation: fadeIn 1s ease-in-out; /* Entrance animation */
+            animation: fadeIn 1s ease-in-out;
         }
 
         @keyframes fadeIn {
@@ -45,95 +45,106 @@
             border-radius: 50%;
             margin-bottom: 20px;
             object-fit: cover;
-            border: 4px solid #00bfff; /* Deep sky blue border for a cool, boyish vibe */
+            border: 4px solid #00bfff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease; /* Hover animation */
+            transition: transform 0.3s ease;
         }
 
         .avatar:hover {
-            transform: scale(1.1) rotate(5deg); /* Fun hover effect */
+            transform: scale(1.1) rotate(5deg);
         }
 
         h1 {
             font-size: 28px;
-            margin: 0 0 10px; /* Reduced bottom margin slightly */
-            color: #00ff00; /* Vibrant green for title (like energy blasts in anime) */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Stronger shadow for heroic depth */
+            margin: 0 0 10px;
+            color: #00ff00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             font-weight: bold;
         }
         
-        /* Style for the description paragraph for better readability */
         p {
             margin: 0 0 20px;
-            line-height: 1.6; /* Increased line-height for better readability of CJK characters */
+            line-height: 1.6;
             font-size: 16px;
         }
 
         .link-button {
             display: block;
-            background: linear-gradient(45deg, #007bff, #0056b3); /* Blue gradient for a strong, masculine feel */
+            background: linear-gradient(45deg, #007bff, #0056b3);
             color: #fff;
             text-decoration: none;
             padding: 15px;
             margin: 15px 0;
-            border-radius: 10px; /* Rounded buttons */
+            border-radius: 10px;
             font-size: 18px;
             font-weight: bold;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, background 0.3s ease; /* Smooth animations */
-            word-break: break-all; /* Prevents long CJK text from overflowing the button */
+            transition: transform 0.3s ease, background 0.3s ease;
+            word-break: break-all;
         }
 
         .link-button:hover {
-            background: linear-gradient(45deg, #0056b3, #003f7f); /* Darker blue on hover */
-            transform: translateY(-5px) scale(1.05); /* Lift and scale effect */
+            background: linear-gradient(45deg, #0056b3, #003f7f);
+            transform: translateY(-5px) scale(1.05);
         }
 
-        /* Responsive design for smaller screens */
         @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-
-            .avatar {
-                width: 100px;
-                height: 100px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-            
-            p {
-                font-size: 14px;
-            }
-
-            .link-button {
-                padding: 12px;
-                font-size: 16px;
-            }
+            .container { padding: 20px; }
+            .avatar { width: 100px; height: 100px; }
+            h1 { font-size: 24px; }
+            p { font-size: 14px; }
+            .link-button { padding: 12px; font-size: 16px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Avatar placeholder - replace src with your image URL -->
+        <!-- Avatar: Initially loads the static 'avatar.png'. The script below will try to replace it with 'avatar.gif'. -->
         <img src="avatar.png" alt="Avatar" class="avatar">
         
-        <!-- Title or Username -->
         <h1>DownOT</h1>
-        <!-- Description -->
         <p>AI Art / AIイラスト / AI 繪圖</p>
         <p>
             Crafting youthful & kemomimi characters<br>
             ショタ・ロリ・ケモミミ中心<br>
             主攻少年、獸耳
         </p>
-        <!-- Link positions - replace href with your actual links -->
+        
         <a href="https://s.downot.moe/pixiv" class="link-button">My Pixiv</a>
         <a href="https://s.downot.moe/discord" class="link-button">Join My Discord Server</a>
         <a href="https://a.downot.moe/" class="link-button">Collections (Only Member)</a>
         <a href="https://odaibako.net/u/downot" class="link-button">Feedback | お題箱</a>
     </div>
+
+    <!-- JavaScript for progressive avatar loading -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Configuration ---
+            // The avatar element on the page
+            const avatarElement = document.querySelector('.avatar');
+            // The path to your animated avatar (e.g., a GIF)
+            const animatedAvatarSrc = 'avatar.gif'; // <-- IMPORTANT: Change this to your animated avatar file name
+
+            // --- Logic ---
+            // Create a new Image object to load the animated avatar in the background
+            const animatedAvatarLoader = new Image();
+
+            // Define what happens when the animated avatar loads successfully
+            animatedAvatarLoader.onload = () => {
+                // If loading is successful, update the src of the on-page avatar
+                avatarElement.src = animatedAvatarSrc;
+                console.log('Animated avatar loaded successfully.');
+            };
+
+            // Define what happens if the animated avatar fails to load
+            animatedAvatarLoader.onerror = () => {
+                // If there's an error, do nothing. The static avatar will remain.
+                console.error('Failed to load animated avatar. Displaying static version.');
+            };
+
+            // Start loading the animated avatar. This is a non-blocking, asynchronous operation.
+            animatedAvatarLoader.src = animatedAvatarSrc;
+        });
+    </script>
 </body>
 </html>
